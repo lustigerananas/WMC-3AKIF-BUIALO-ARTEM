@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Umfrage: Zitronenwasser</title>
+</head>
+<body>
+
+<h1>Umfrage: Zitronenwasser</h1>
+<p>Bitte füllen Sie das folgende Formular aus. Felder mit (*) sind Pflichtfelder.</p>
+
+<form action="mailto:lorenzd@spengergasse.at?subject=Umfrage%20Zitronenwasser"
+      method="post" enctype="text/plain">
+
+    <input type="hidden" name="formular" value="umfrage_zitronenwasser">
+
+    <h3>Persönliche Angaben</h3>
+
+    Vorname (*):<br>
+    <input type="text" name="vorname" required pattern="[A-Za-zÄÖÜäöüß\- ]{2,30}">
+    <br><br>
+
+    Nachname (*):<br>
+    <input type="text" name="nachname" required pattern="[A-Za-zÄÖÜäöüß\- ]{2,30}">
+    <br><br>
+
+    Postleitzahl (*):<br>
+    <input type="text" name="plz" required pattern="[1-9][0-9]{3}" placeholder="z. B. 1050">
+    <br><br>
+
+    E-Mail:<br>
+    <input type="email" name="email" placeholder="name@beispiel.at">
+
+    <h3>Trinkverhalten</h3>
+
+    Wie viele Gläser Zitronenwasser trinken Sie pro Woche? (*)<br>
+    <input type="number" name="glaeser_pro_woche" min="0" max="100" required>
+    <br><br>
+
+    Seit wann trinken Sie Zitronenwasser?<br>
+    <input type="date" name="seit_wann">
+
+    <h3>Wann trinken Sie Zitronenwasser?</h3>
+
+    <input type="radio" name="zeitpunkt" value="morgens" required>Morgens<br>
+    <input type="radio" name="zeitpunkt" value="mittags">Mittags<br>
+    <input type="radio" name="zeitpunkt" value="abends">Abends<br>
+    <input type="radio" name="zeitpunkt" value="unregelmaessig">Unregelmäßig
+
+    <h3>Was geben Sie zusätzlich ins Wasser?</h3>
+
+    <input type="checkbox" name="zutaten" value="honig">Honig<br>
+    <input type="checkbox" name="zutaten" value="ingwer">Ingwer<br>
+    <input type="checkbox" name="zutaten" value="minze">Minze<br>
+    <input type="checkbox" name="zutaten" value="eis">Eiswürfel<br>
+    <input type="checkbox" name="zutaten" value="nichts">Nichts
+
+    <h3>Bevorzugte Temperatur</h3>
+
+    <select name="temperatur" required>
+        <option value="kalt">Kalt</option>
+        <option value="zimmertemperatur" selected>Zimmertemperatur</option>
+        <option value="lauwarm">Lauwarm</option>
+        <option value="heiss">Heiß</option>
+    </select>
+
+    <h3>Warum trinken Sie Zitronenwasser?</h3>
+
+    <small>Mehrfachauswahl mit Strg (Windows) bzw. Cmd (Mac)</small><br>
+    <select name="gruende" multiple size="5">
+        <option value="geschmack" selected>Geschmack</option>
+        <option value="gesundheit">Gesundheit</option>
+        <option value="vitamin_c">Vitamin C</option>
+        <option value="mehr_trinken">Um mehr zu trinken</option>
+        <option value="gewohnheit">Gewohnheit</option>
+    </select>
+
+    <h3>Anmerkungen</h3>
+
+    <textarea name="kommentar" rows="5" cols="60" maxlength="500"
+              placeholder="Fügen Sie hier Ihre Anmerkungen ein!"></textarea>
+    <br><br>
+
+    <input type="checkbox" name="datenschutz" value="ja" required>
+    Ich stimme der Verarbeitung meiner Daten für diese Umfrage zu. (*)
+    <br><br>
+
+    <input type="submit" value="Formular abschicken">
+    <input type="reset" value="Formular zurücksetzen">
+
+</form>
+
+</body>
+</html>
